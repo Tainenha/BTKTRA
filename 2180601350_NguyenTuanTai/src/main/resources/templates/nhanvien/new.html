@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Nhân Viên mới</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        /* CSS giống như trong đoạn code trước */
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Tạo Nhân Viên mới</h1>
+    <form action="#" th:action="@{/nhanviens}" th:object="${nhanvien}" method="post">
+        <div class="form-group">
+            <label>Mã NV:</label>
+            <input type="text" class="form-control" th:field="*{ma_NV}"/>
+        </div>
+        <div class="form-group">
+            <label>Tên NV:</label>
+            <input type="text" class="form-control" th:field="*{ten_NV}"/>
+        </div>
+        <div class="form-group">
+            <label>Phái:</label>
+            <select class="form-control" th:field="*{phai}">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Nơi Sinh:</label>
+            <input type="text" class="form-control" th:field="*{noiSinh}"/>
+        </div>
+        <div class="form-group">
+            <label>Mã Phòng:</label>
+            <select class="form-control" th:field="*{ma_Phong}">
+                <option value="KT">KT</option>
+                <option value="QT">QT</option>
+                <option value="TC">TC</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Lương:</label>
+            <input type="number" class="form-control" th:field="*{luong}"/>
+        </div>
+        <button type="submit" class="btn btn-success">Lưu</button>
+        <a href="/nhanviens" class="btn btn-secondary">Trở về danh sách</a>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
